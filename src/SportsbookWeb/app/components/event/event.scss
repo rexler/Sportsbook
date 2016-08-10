@@ -1,0 +1,44 @@
+.couponItemMain {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 60px;
+}
+.couponItemMain > div:first-child {
+  -webkit-flex: 2 0 0;
+  flex: 2;
+  margin: 5px 0 0 5px;
+}
+.couponItemMain > div {
+  -webkit-flex: 1 0 0;
+  flex: 1;
+  text-align: center;
+}
+.timeStamp {
+  color: #666;
+}
+.couponItem {
+  font-size: 12px;
+}
+.priceButton {
+  width: 95%;
+  height: 30px;
+  line-height: 30px;
+  background-color: #dadfe5;
+  border-radius: 5px;
+  margin: auto;
+  text-align: center;
+  transition: background .25s ease-out;
+  cursor: pointer;
+}
+.priceButton:hover {
+  background-color: #b4bfc5;
+}
+hr {
+  border: solid #ddd;
+  border-width: 1px 0 0;
+  margin: .25rem 0;
+}

@@ -243,3 +243,13 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+#Webstorm
+.idea
+.DS_Store
+.tmp
+.git
+node_modules
+.settings
+dist/
+
