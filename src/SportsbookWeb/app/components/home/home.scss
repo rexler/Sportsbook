@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: Arial,Helvetica,"Helvetica Neue",sans-serif;
+}
+a {
+  color: #248CB3;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.mainContainer {
+  display: flex;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-start;
+}
