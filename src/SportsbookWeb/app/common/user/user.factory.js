@@ -1,12 +1,12 @@
 let UserFactory = function () {
-  const user = {};
+  const user = { name: 'alex' };
 
   let getUser = () => {
     return user;
   };
 
   let isSignedIn = () => {
-    return user.isSignedIn; 
+    return user.isSignedIn;
   };
 
   return { getUser, isSignedIn };
