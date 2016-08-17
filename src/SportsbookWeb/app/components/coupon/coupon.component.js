@@ -5,6 +5,7 @@ import './coupon.scss';
 let couponComponent = {
   restrict: 'E',
   bindings: {
+    coupon: '='
   },
   template,
   controller
