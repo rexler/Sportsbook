@@ -1,20 +1,16 @@
 <div class="coupon">
   <div class="couponHeader">
-    <div>Copa America</div>
+    <div>{{ $ctrl.coupon.title }}</div>
   </div>
   <div class="couponSubHeader">
-    <div>Copa America</div>
+    <div>{{ $ctrl.coupon.subtitle }}</div>
     <div>Home</div>
     <div>Draw</div>
     <div>Away</div>
   </div>
   <hr>
   <div>
-
-    <event eventname="Uruguay vs Venezuela"></event>
-    <event eventname="Mexico vs Jamaica"></event>
-    <event eventname="Brazil vs Argentina"></event>
-
+    <event ng-repeat="event in $ctrl.coupon.events" event="event"></event>
 
   </div>
 </div>

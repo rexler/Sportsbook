@@ -5,7 +5,7 @@ import './event.scss';
 let eventComponent = {
   restrict: 'E',
   bindings: {
-    eventname: '@'
+    event: '='
   },
   template,
   controller
