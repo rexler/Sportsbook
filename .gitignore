@@ -253,3 +253,4 @@ node_modules
 .settings
 dist/
 
+*PublishProfiles

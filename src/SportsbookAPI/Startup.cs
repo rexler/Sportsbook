@@ -20,7 +20,8 @@ namespace SportsbookAPI
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                .AddEnvironmentVariables();
+                .AddEnvironmentVariables("SWeb_");
+
             Configuration = builder.Build();
         }
 
@@ -36,8 +37,17 @@ namespace SportsbookAPI
 
             });
             //Add database services
-            var connection = @"Server=(localdb)\mssqllocaldb;Database=SportsbookWeb.Database;Trusted_Connection=True;";
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            //Try to load connection string from Env variable:
+            foreach (var enVar in Configuration.GetChildren())
+            {
+                if (enVar.Key == "ConnectionString")
+                {
+                    connection = enVar.Value;
+                }
+            }
             services.AddDbContext<CouponsContext>(options => options.UseSqlServer(connection));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
