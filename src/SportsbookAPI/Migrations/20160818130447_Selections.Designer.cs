@@ -8,9 +8,10 @@ using SportsbookAPI.Models;
 namespace SportsbookAPI.Migrations
 {
     [DbContext(typeof(CouponsContext))]
-    partial class CouponsContextModelSnapshot : ModelSnapshot
+    [Migration("20160818130447_Selections")]
+    partial class Selections
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -61,7 +62,7 @@ namespace SportsbookAPI.Migrations
 
                     b.HasIndex("EventId");
 
-                    b.ToTable("Selections");
+                    b.ToTable("Selection");
                 });
 
             modelBuilder.Entity("SportsbookAPI.Models.Event", b =>

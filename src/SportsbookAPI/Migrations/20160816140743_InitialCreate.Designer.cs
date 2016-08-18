@@ -8,9 +8,10 @@ using SportsbookAPI.Models;
 namespace SportsbookAPI.Migrations
 {
     [DbContext(typeof(CouponsContext))]
-    partial class CouponsContextModelSnapshot : ModelSnapshot
+    [Migration("20160816140743_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -46,37 +47,11 @@ namespace SportsbookAPI.Migrations
                     b.ToTable("Events");
                 });
 
-            modelBuilder.Entity("SportsbookAPI.Models.Selection", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("EventId");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Price");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("EventId");
-
-                    b.ToTable("Selections");
-                });
-
             modelBuilder.Entity("SportsbookAPI.Models.Event", b =>
                 {
                     b.HasOne("SportsbookAPI.Models.Coupon", "Coupon")
                         .WithMany("Events")
                         .HasForeignKey("CouponId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("SportsbookAPI.Models.Selection", b =>
-                {
-                    b.HasOne("SportsbookAPI.Models.Event", "Event")
-                        .WithMany("Selections")
-                        .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }

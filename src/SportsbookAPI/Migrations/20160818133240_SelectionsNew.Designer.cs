@@ -8,9 +8,10 @@ using SportsbookAPI.Models;
 namespace SportsbookAPI.Migrations
 {
     [DbContext(typeof(CouponsContext))]
-    partial class CouponsContextModelSnapshot : ModelSnapshot
+    [Migration("20160818133240_SelectionsNew")]
+    partial class SelectionsNew
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")

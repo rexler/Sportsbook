@@ -9,8 +9,10 @@ namespace SportsbookAPI.Models
     {
         public CouponsContext(DbContextOptions<CouponsContext> options) : base(options)
         {}
+        public CouponsContext() : base() { }
         public DbSet<Coupon> Coupons { get; set; }
         public DbSet<Event> Events { get; set; }
+        public DbSet<Selection> Selections { get; set; }
 
         public void EnsureSeedData()
         {
@@ -47,6 +49,16 @@ namespace SportsbookAPI.Models
         public string Name { get; set; }
         public int CouponId { get; set; }
         public Coupon Coupon { get; set; }
+        public List<Selection> Selections { get; set; }
+    }
+
+    public class Selection
+    {
+        public int id { get; set; }
+        public string Name { get; set; }
+        public string Price { get; set; }
+        public int EventId { get; set; }
+        public Event Event { get; set; }
     }
 
     

@@ -24,6 +24,13 @@ namespace SportsbookAPI.Controllers
         public IActionResult Get()
         {
             List<Coupon> coupons = _context.Coupons.Include(c => c.Events).ToList();
+            foreach (Coupon cp in coupons)
+            {
+                foreach (Event e in cp.Events)
+                {
+                    e.Selections = _context.Selections.Where(s => s.EventId == e.id).ToList();
+                }
+            }
             return new ObjectResult(coupons);
         }
 
