@@ -48,6 +48,8 @@ namespace SportsbookAPI
             }
             services.AddDbContext<CouponsContext>(options => options.UseSqlServer(connection));
 
+            services.AddCors();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,6 +73,8 @@ namespace SportsbookAPI
                     Console.WriteLine("Error: " + ex.Message);
                 }
             }
+
+            app.UseCors(builder => builder.WithOrigins("*"));
 
             app.UseMvc();
         }
